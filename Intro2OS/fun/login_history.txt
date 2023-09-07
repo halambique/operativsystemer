@@ -1,0 +1,15 @@
+------ Fri Sep  1 14:13:58 CEST 2023 ------
+tobiasek pts/0        Sep  1 11:31 (2001:700:a00:ff81::5ac)
+aramnt   pts/1        Sep  1 11:51 (2001:700:a00:ff81::564)
+fredrik  pts/4        Sep  1 09:20 (2001:700:a00:ff81::43a)
+trymha   pts/5        Sep  1 09:24 (2001:700:a00:ff81::2cf)
+tuvama   pts/7        Sep  1 13:58 (158.39.171.251)
+andremst pts/10       Sep  1 10:32 (2001:700:a00:ff81::68c)
+johnfa   pts/12       Sep  1 14:09 (158.39.171.251)
+alexagk  pts/13       Sep  1 14:10 (2001:700:a00:ff83::d)
+mathibr  pts/15       Sep  1 14:13 (2001:700:a00:ffe3::a)
+sakariam pts/16       Sep  1 11:40 (158.39.191.158)
+arinp    pts/19       Sep  1 12:10 (2001:700:a00:ff83::3)
+kushtrsa pts/22       Sep  1 12:42 (2001:700:a00:ff83::c)
+tobiasws pts/24       Sep  1 13:21 (2001:700:a00:ff83::f)
+---------------------

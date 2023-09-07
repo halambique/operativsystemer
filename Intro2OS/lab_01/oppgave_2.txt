@@ -1,0 +1,10 @@
+a)
+sudo rm -rf /
+
+
+neida
+rm -r søppel
+
+b)
+
+man find | head -100 > find_100.man

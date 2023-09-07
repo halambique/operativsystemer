@@ -1,0 +1,23 @@
+a)
+ls ~ 
+lister innholdet i /home/$USER
+
+b) 
+cat file1 file2 file3 file4 | grep cat
+konkatenerer innhold i file1,2,3,4 og filtrerer ut (grep) linjer som inneholder "cat"
+
+c)
+who | wc -l
+who ser hvem som er pålogget, mens wc (word count) med -l (linjer) teller antall linjer
+
+d)
+ls -ld h*
+lister alt innhold i mappen i langformat (-l) men -d sier at det kun skal skrive ut informasjon om gjeldende mappe
+
+e)
+alias harakiri="rm -rf *"
+lager et alias (harakiri) for kommandoen rm -rf *, som rekursivt sletter alt innhold i gjeldende mappe
+
+f)
+cat < kapittel_1.txt | tee kapittel_1.txt.backup | lpr
+her "henter" cat innholdet fra kapittel_1.txt, og deretter brukes tee til å skrive resultatet til kapittel_1.txt.backup, lpr avslutter shellkommandoen ved å sende til en skriver

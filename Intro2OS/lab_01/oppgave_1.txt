@@ -1,0 +1,2 @@
+a) et grafisk brukergrensesnitt er ofte svært ressurskrevende å kjøre, men kan gjøre teknologi mer tilgjengelig for folk
+b) ved å bruke et shell har vi mer kontroll over maskinen, i tillegg til at det er svært ressurseffektivt. jeg har for eksempel en server med 1GB RAM i Tyskland. det sier seg selv at den er enklere å administrere via en konsoll.
