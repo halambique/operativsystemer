@@ -18,10 +18,9 @@ struct process *copy(struct process p){
 }
 
 int main() {
-    struct process P1 = {1337, 'A', 16.10, 3.33};
+    struct process P1 = {1337, 'A', 13.37, 18.14};
     struct process *P2;
 
     P2 = copy(P1);
-
-    printf("%d\n", P2->number);
+	free(P2);
 }
