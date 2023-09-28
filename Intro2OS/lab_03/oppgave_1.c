@@ -19,7 +19,7 @@ int palindrome(char *s1) {
 }
 
 int main() {
-    char s1[] = "agnes i senga";
+    char s1[] = "ragnhild";
     int result = palindrome(s1);
     printf("%d\n", result);
 
