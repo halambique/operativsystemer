@@ -1,0 +1,107 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define FALSE 0
+#define TRUE 1
+#define M 100
+#define N 100
+
+
+int m;
+int n;
+int E[M];
+int A[M];
+int C[N][M];
+int R[N][M];
+
+void
+read_file (char *filename)
+{
+  int i, j;
+  FILE *p_file;
+  p_file = fopen (filename, "r");
+  if (p_file == NULL)
+    {
+      printf ("Feil ved åpning av filen \"%s\"\n", filename);
+      exit (-1);
+    }
+
+  fscanf (p_file, "%d %d", &m, &n);
+
+  for (i = 0; i < m; i++)
+    fscanf (p_file, "%d", &E[i]);
+
+  for (i = 0; i < n; i++)
+    for (j = 0; j < m; j++)
+      fscanf (p_file, "%d", &C[i][j]);
+
+  for (i = 0; i < n; i++)
+    for (j = 0; j < m; j++)
+      fscanf (p_file, "%d", &R[i][j]);
+
+  for (i = 0; i < m; i++)
+    {
+      A[i] = E[i];
+      for (j = 0; j < n; j++)
+	A[i] -= C[j][i];
+    }
+  fclose (p_file);
+}
+
+int
+safe ()
+{
+  int Work[M], Finish[N], i, j, process_done;
+
+  for (i = 0; i < m; i++)
+    Work[i] = A[i];
+  for (i = 0; i < n; i++)
+    Finish[i] = FALSE;
+
+  while (1)
+    {
+      process_done = FALSE;
+      for (i = 0; i < n; i++)
+	{
+	  if (!Finish[i])
+	    {
+	      int can_allocate = TRUE;
+	      for (j = 0; j < m; j++)
+		{
+		  if (R[i][j] > Work[j])
+		    {
+		      can_allocate = FALSE;
+		      break;
+		    }
+		}
+	      if (can_allocate)
+		{
+		  for (j = 0; j < m; j++)
+		    Work[j] += C[i][j];
+		  Finish[i] = TRUE;
+		  process_done = TRUE;
+		  printf ("p%d can run A = [ ", i + 1);
+		  for (j = 0; j < m; j++)
+		    printf ("%d ", Work[j]);
+		  printf ("]\n");
+		}
+	    }
+	}
+      if (!process_done)
+	{
+	  printf ("No more processes can run\n");
+	  break;
+	}
+    }
+
+  for (i = 0; i < n; i++)
+    {
+      if (!Finish[i])
+	{
+	  printf ("Unsafe\n");
+	  return FALSE;
+	}
+    }
+  printf ("Safe\n");
+  return TRUE;
+}
